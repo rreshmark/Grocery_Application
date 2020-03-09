@@ -1,0 +1,32 @@
+
+
+<div >
+  <br/>
+  <div class="row">
+      <div class="col-xs-6 col-md-4">
+          <div class="input-group textbox" >
+              <input type="text" class="form-control"  placeholder="enter grocery items" id="txtSearch" [(ngModel)]="todo.name" />
+              <div class="input-group-btn">
+                  <button class="btn btn-primary" type="button" (click)="onClick()">
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+      
+                  </button>
+      
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  <br/>
+  <ul class="list-group">
+    <li *ngFor="let item of todolist" class="list-group-item">
+      <span class="floatleft">  {{ item.name }} </span>
+      
+        <span type="button"   (click)="onEdit(item)" class="glyphicon glyphicon-pencil fa-2x floatright "></span>
+        
+        <span type="button" (click)="onDelete(item)" class="glyphicon glyphicon-trash fa-2x floatright paddingLeft"></span>
+    </li>
+</ul>
+</div>
+
