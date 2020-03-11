@@ -12,18 +12,19 @@
 .textbox{
   width:400%;
   padding: 10px;
+  object-position: center;
 
 }
 .floatleft{
   float: left;
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   width: 100%;
 }
 .displayed-item{
   float: left;
   /*margin-right: 70%;*/
   font-weight: 700;
-  background-color: red;
+  /* background-color: red; */
   /*border-width: 50%;*/
  /* border: 1px solid black;*/
   width: 70%;
@@ -34,24 +35,34 @@
 {
   /*border: 1px solid black;*/
   margin-right: 10%;
-  color: white;
-  background-color: rosybrown;
+  color: black;
+  /* background-color: rosybrown; */
   /*padding: 0.5em;*/
- float: left;
+ float : left;
 }
 
 .glyphicon-pencil:hover{
   cursor: pointer;
-  color: black;
-  
-}
+  color: rgb(10, 101, 185);
+  }
+  .glyphicon-pencil{
+    padding-right: 15px;
+  }
   .glyphicon-trash:hover{
     cursor: pointer;
-    color: black;
+    color: rgb(10, 101, 185);
+  
   }
 input{
   font-weight: 700;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.totalbox{ 
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  float: inline-end;
+  
 }
 
 

@@ -19,15 +19,21 @@
   
   
   <br/>
-  <ul class="list-group">
+  <ul class="list-group" style="list-style-type:disc;">
     <li *ngFor="let item of todolist" class="list-group-item floatleft">
       <span class="displayed-item">  {{ item.name }} </span>
       <span class="box1">
-        <span type="button"   (click)="onEdit(item)" class="glyphicon glyphicon-pencil fa-2x "></span>
+        <span type="button"   (click)="onEdit(item)" class="glyphicon glyphicon-pencil fa-4x "></span>
         
-        <span type="button" (click)="onDelete(item)" class="glyphicon glyphicon-trash fa-2x  paddingLeft"></span>
+        <span type="button" (click)="onDelete(item)" class="glyphicon glyphicon-trash fa-4x  paddingLeft"></span>
       </span>
     </li>
+    <li *ngIf="todolist.length > 0" class="list-group-item floatleft">
+    <p class="totalbox" >Total items : {{todolist.length}} </p>
+  </li>
 </ul>
+
 </div>
+
+
 
