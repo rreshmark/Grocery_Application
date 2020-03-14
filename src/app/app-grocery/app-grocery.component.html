@@ -1,14 +1,14 @@
 
 
 <div >
-  <br/>
+  
   <div class="row">
       <div class="col-xs-6 col-md-4">
           <div class="input-group textbox" >
               <input type="text" class="form-control"  placeholder="enter grocery items" id="txtSearch" [(ngModel)]="todo.name" />
               <div class="input-group-btn">
                   <button class="btn btn-primary" type="button" (click)="onClick()">
-      <span class="glyphicon glyphicon-shopping-cart"></span>
+      <span class="glyphicon glyphicon-plus"></span>
       
                   </button>
       
@@ -18,14 +18,17 @@
   </div>
   
   
-  <br/>
+    
+  
   <ul class="list-group" style="list-style-type:disc;">
     <li *ngFor="let item of todolist" class="list-group-item floatleft">
       <span class="displayed-item">  {{ item.name }} </span>
       <span class="box1">
+
         <span type="button"   (click)="onEdit(item)" class="glyphicon glyphicon-pencil fa-4x "></span>
         
         <span type="button" (click)="onDelete(item)" class="glyphicon glyphicon-trash fa-4x  paddingLeft"></span>
+        <span type="button" (click)="oncheck(item)" class="glyphicon glyphicon-shopping-cart fa-4x  paddingLeft" ></span>
       </span>
     </li>
     <li *ngIf="todolist.length > 0" class="list-group-item floatleft">
@@ -33,7 +36,26 @@
   </li>
 </ul>
 
+<div>
+<ul class="list-group cart" style="list-style-type:disc;">
+  <li *ngIf="donelist.length > 0" class="list-group-item floatleft">
+    <h4> <b> Purchased List 
+      <span type="button" (click)="onClear()" class="glyphicon glyphicon-trash fa-4x  paddingLeft"> </span> </b></h4>
+  </li>
+  <li *ngFor="let doneitem of donelist" class="list-group-item floatleft">
+    
+    <span class="displayed-item">  {{ doneitem.name }} </span>
+    <!-- <span class="box1"> -->
+      <!-- <span ></span> -->
+    <!-- </span> -->
+  </li>
+</ul>
 </div>
+
+
+</div>
+
+
 
 
 
