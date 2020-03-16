@@ -13,15 +13,18 @@
                   </button>
       
               </div>
+              
           </div>
       </div>
   </div>
-
+  <div *ngIf="errormessage.length >0">
+    <ul class="list-group" style="list-style-type:disc;">
+    <p class="error">Error:{{errormessage}}</p>
+  </ul>
+  </div>
 <div *ngIf="todolist.length > 0" class="list1">
   <ul class="list-group" style="list-style-type:disc;">
-    <div *ngIf="errormessage.length >0">
-      <p class="error">Error:{{errormessage}}</p>
-    </div>
+   
     <li *ngIf="todolist.length > 0" class="list-group-item floatleft">
       <h4> <b> <u>Check List </u> </b> </h4>
     
