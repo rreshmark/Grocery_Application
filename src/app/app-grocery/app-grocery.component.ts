@@ -12,21 +12,30 @@ export class AppGroceryComponent implements OnInit {
     name:'',
     id:0
   };
+  errormessage:string='';
   todolist=[];
   donelist=[];
 
   onClick(){
     console.log( JSON.stringify(this.todo));
-    if(this.todo.id == 0)
+    if(this.todo.id == 0 && this.todo.name.length != 0)
     {
        var itemToInsert = {id:(new Date()).getTime(), name: this.todo.name}
       this.todolist.push(itemToInsert);  
       console.log("inserted" + JSON.stringify(itemToInsert) +" with" + itemToInsert.id)
+      this.errormessage='';
+      
+    }
+    else if(this.todo.id == 0 && this.todo.name.length == 0)
+    {
+    
+      this.errormessage="Please enter a valid item"; 
     }
     this.todo ={
       name:'',
       id:0
     };
+    
   }
         onEdit(item){
         this.todo = item;

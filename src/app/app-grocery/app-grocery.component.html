@@ -5,9 +5,9 @@
   <div class="row">
       <div class="col-xs-6 col-md-4">
           <div class="input-group textbox" >
-              <input type="text" class="form-control"  placeholder="enter grocery items" id="txtSearch" [(ngModel)]="todo.name" />
+              <input type="text" class="form-control"  placeholder="enter item name" id="txtSearch" [(ngModel)]="todo.name" />
               <div class="input-group-btn">
-                  <button class="btn btn-primary" type="button" (click)="onClick()">
+                  <button class="btn btn-primary"  data-toggle="tooltip" data-placement="top" title="Add item" type="button" (click)="onClick()">
       <span class="glyphicon glyphicon-plus"></span>
       
                   </button>
@@ -16,40 +16,53 @@
           </div>
       </div>
   </div>
-  
-  
-    
-  
+
+<div *ngIf="todolist.length > 0" class="list1">
   <ul class="list-group" style="list-style-type:disc;">
+    <div *ngIf="errormessage.length >0">
+      <p class="error">Error:{{errormessage}}</p>
+    </div>
+    <li *ngIf="todolist.length > 0" class="list-group-item floatleft">
+      <h4> <b> <u>Check List </u> </b> </h4>
+    
     <li *ngFor="let item of todolist" class="list-group-item floatleft">
-      <span class="displayed-item">  {{ item.name }} </span>
+      
+      <span class="displayed-item">{{ item.name }} </span>
       <span class="box1">
 
-        <span type="button"   (click)="onEdit(item)" class="glyphicon glyphicon-pencil fa-4x "></span>
+        <span type="button" data-toggle="tooltip" title="Edit item"  (click)="onEdit(item)" class="glyphicon glyphicon-pencil  "></span>
         
-        <span type="button" (click)="onDelete(item)" class="glyphicon glyphicon-trash fa-4x  paddingLeft"></span>
-        <span type="button" (click)="oncheck(item)" class="glyphicon glyphicon-shopping-cart fa-4x  paddingLeft" ></span>
+        <span type="button" data-toggle="tooltip" title="Delete item" (click)="onDelete(item)" class="glyphicon glyphicon-trash   paddingLeft"></span>
+
+        <span type="button" data-toggle="tooltip" title="Add to cart" (click)="oncheck(item)" class="glyphicon glyphicon-shopping-cart   paddingLeft" ></span>
       </span>
     </li>
     <li *ngIf="todolist.length > 0" class="list-group-item floatleft">
-    <p class="totalbox" >Total items : {{todolist.length}} </p>
+    <p class="totalbox" >Items To Buy : {{todolist.length}} </p>
   </li>
 </ul>
-
-<div>
+<br>
+<br/>
+</div>
+<div *ngIf="donelist.length > 0" class="list2">
+  
 <ul class="list-group cart" style="list-style-type:disc;">
-  <li *ngIf="donelist.length > 0" class="list-group-item floatleft">
-    <h4> <b> Purchased List 
-      <span type="button" (click)="onClear()" class="glyphicon glyphicon-trash fa-4x  paddingLeft"> </span> </b></h4>
+  
+  <li  class="list-group-item floatleft">
+    <h4> <b> <u> Items in the cart </u>
+      <span type="button" data-toggle="tooltip" data-placement="top" title="Clear All" (click)="onClear()" class="glyphicon glyphicon-remove-sign   "> </span> </b></h4>
   </li>
+
   <li *ngFor="let doneitem of donelist" class="list-group-item floatleft">
     
     <span class="displayed-item">  {{ doneitem.name }} </span>
-    <!-- <span class="box1"> -->
+    
       <!-- <span ></span> -->
-    <!-- </span> -->
+    
   </li>
+
 </ul>
+
 </div>
 
 

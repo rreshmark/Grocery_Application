@@ -1,10 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~bootstrap/dist/css/bootstrap.css" */
 body {
-  background-image:url(https://imgur.com/wy7ugTd.png); 
+  background-image:url(https://imgur.com/a3teBSJ.png); 
   background-repeat: no-repeat;
-  background-size: cover;
+  background-color:#0E0E0E;
+  background-size:cover
   }
-  /*  */
-
   
